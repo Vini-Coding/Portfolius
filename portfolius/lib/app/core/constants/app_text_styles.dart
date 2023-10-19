@@ -18,20 +18,23 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle headingTextStyle() {
+  static TextStyle headingTextStyle({
+    double fontSize = 36,
+    Color color = Colors.white,
+  }) {
     return GoogleFonts.rubikMoonrocks(
-      fontSize: 36,
+      fontSize: fontSize,
       fontWeight: FontWeight.bold,
       letterSpacing: 2,
-      color: Colors.white,
+      color: color,
     );
   }
 
   static TextStyle normalTextStyle() {
-    return GoogleFonts.signikaNegative(
+    return const TextStyle(
       fontWeight: FontWeight.w500,
       fontSize: 17,
-      letterSpacing: 1,
+      letterSpacing: 1.5,
       color: Colors.white,
     );
   }
