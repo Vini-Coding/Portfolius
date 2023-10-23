@@ -5,7 +5,7 @@ import 'package:portfolius/app/core/constants/app_colors.dart';
 import 'package:portfolius/app/core/constants/constants.dart';
 import 'package:portfolius/app/view/components/general_button_widget.dart';
 
-import '../../core/constants/app_text_styles.dart';
+import '../../../core/constants/app_text_styles.dart';
 
 class AboutMeSession extends StatefulWidget {
   const AboutMeSession({super.key});

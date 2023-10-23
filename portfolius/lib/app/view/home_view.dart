@@ -2,12 +2,13 @@ import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolius/app/view/components/profile_animation_widget.dart';
+import 'package:portfolius/app/view/components/sessions/services_session.dart';
 
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
 import '../core/constants/constants.dart';
-import 'components/about_me_session.dart';
+import 'components/sessions/about_me_session.dart';
 import 'components/social_media_button_widget.dart';
 import 'components/general_button_widget.dart';
 
@@ -165,6 +166,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             const SizedBox(height: 220),
             const AboutMeSession(),
+            const ServicesSession(),
           ],
         ),
       ),
