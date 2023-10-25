@@ -22,6 +22,8 @@ class ServicesCardWidget extends StatefulWidget {
 }
 
 class _ServicesCardWidgetState extends State<ServicesCardWidget> {
+  final onHoverActive = Matrix4.identity()..translate(0, -10, 0);
+  final onHoverRemove = Matrix4.identity()..translate(0, 0, 0);
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -36,6 +38,7 @@ class _ServicesCardWidgetState extends State<ServicesCardWidget> {
       decoration: BoxDecoration(
         color: AppColors.backgroundColor2,
         borderRadius: BorderRadius.circular(30),
+        border: widget.isHover ? Border.all(color: AppColors.themeColor, width: 2) : null,
         boxShadow: const [
           BoxShadow(
             color: Colors.black54,
@@ -47,7 +50,9 @@ class _ServicesCardWidgetState extends State<ServicesCardWidget> {
       ),
       height: widget.isHover ? 400 : 390,
       width: widget.isHover ? 400 : 390,
+      transform: widget.isHover ? onHoverActive : onHoverRemove,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
             widget.asset,

@@ -15,7 +15,7 @@ class ServicesSession extends StatefulWidget {
 }
 
 class _ServicesSessionState extends State<ServicesSession> {
-  bool isHover = false;
+  bool isApp = false, isUI = false, isQA = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,7 @@ class _ServicesSessionState extends State<ServicesSession> {
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 12),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           FadeInDown(
             duration: const Duration(milliseconds: 1200),
@@ -46,7 +47,7 @@ class _ServicesSessionState extends State<ServicesSession> {
               ),
             ),
           ),
-          Constants.sizedBox(height: 60),
+          Constants.sizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -54,26 +55,42 @@ class _ServicesSessionState extends State<ServicesSession> {
                 onTap: () {},
                 onHover: (value) {
                   setState(() {
-                    isHover = value;
+                    isApp = value;
                   });
                 },
                 child: ServicesCardWidget(
                   title: "Code",
                   asset: AppAssets.code,
-                  isHover: isHover,
+                  isHover: isApp,
                 ),
               ),
               Constants.sizedBox(width: 18),
-              ServicesCardWidget(
-                title: "UI Design",
-                asset: AppAssets.brush,
-                isHover: isHover,
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isUI = value;
+                  });
+                },
+                child: ServicesCardWidget(
+                  title: "UI Design",
+                  asset: AppAssets.brush,
+                  isHover: isUI,
+                ),
               ),
               Constants.sizedBox(width: 18),
-              ServicesCardWidget(
-                title: "Quality Assurance",
-                asset: AppAssets.analyst,
-                isHover: isHover,
+              InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isQA = value;
+                  });
+                },
+                child: ServicesCardWidget(
+                  title: "Quality Assurance",
+                  asset: AppAssets.analyst,
+                  isHover: isQA,
+                ),
               ),
             ],
           ),

@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolius/app/view/components/profile_animation_widget.dart';
+import 'package:portfolius/app/view/components/sessions/projects_session.dart';
 import 'package:portfolius/app/view/components/sessions/services_session.dart';
 
 import '../core/constants/app_assets.dart';
@@ -167,6 +168,7 @@ class _HomeViewState extends State<HomeView> {
             const SizedBox(height: 220),
             const AboutMeSession(),
             const ServicesSession(),
+            const ProjectsSession(),
           ],
         ),
       ),
