@@ -81,6 +81,8 @@ class _ProjectsSessionState extends State<ProjectsSession> {
                     setState(() {
                       if (value) {
                         hoverIndex = index;
+                      } else {
+                        hoverIndex = null;
                       }
                     });
                   },
@@ -127,9 +129,19 @@ class _ProjectsSessionState extends State<ProjectsSession> {
                               ),
                               Constants.sizedBox(height: 15),
                               Text(
-                                'I design your UI always fitting in your branding and focusing in the best experience the user can get, also developing performatic apps with clean code always with the goal of the best results.',
+                                'I design your UI always fitting in your branding and focusing in the best experience the user can get.',
                                 style: AppTextStyles.normalTextStyle(
                                   color: Colors.black87,
+                                ),
+                              ),
+                              Constants.sizedBox(height: 30),
+                              CircleAvatar(
+                                maxRadius: 25,
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                  AppAssets.share,
+                                  width: 25,
+                                  height: 25,
                                 ),
                               ),
                             ],

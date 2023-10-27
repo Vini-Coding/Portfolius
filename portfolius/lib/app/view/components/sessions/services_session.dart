@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolius/app/core/constants/app_assets.dart';
 import 'package:portfolius/app/core/constants/app_colors.dart';
-import 'package:portfolius/app/view/components/services_card_widget.dart';
+import 'package:portfolius/app/view/components/widgets/services_card_widget.dart';
 
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/constants/constants.dart';

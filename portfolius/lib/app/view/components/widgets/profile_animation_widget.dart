@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/app_assets.dart';
+import '../../../core/constants/app_assets.dart';
 
 class ProfileAnimationWidget extends StatefulWidget {
   const ProfileAnimationWidget({super.key});

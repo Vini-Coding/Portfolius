@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolius/app/core/constants/app_assets.dart';
 import 'package:portfolius/app/core/constants/app_colors.dart';
 import 'package:portfolius/app/core/constants/constants.dart';
-import 'package:portfolius/app/view/components/general_button_widget.dart';
+import 'package:portfolius/app/view/components/widgets/general_button_widget.dart';
 
 import '../../../core/constants/app_text_styles.dart';
 
@@ -22,6 +22,10 @@ class _AboutMeSessionState extends State<AboutMeSession> {
       height: size.height,
       width: size.width,
       color: AppColors.backgroundColor2,
+      padding: EdgeInsets.symmetric(
+        vertical: 30,
+        horizontal: size.width * 0.1,
+      ),
       alignment: Alignment.center,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +64,8 @@ class _AboutMeSessionState extends State<AboutMeSession> {
                   duration: const Duration(milliseconds: 1600),
                   child: Text(
                     "Flutter developer",
-                    style: AppTextStyles.montserratTextStyle(color: Colors.white),
+                    style:
+                        AppTextStyles.montserratTextStyle(color: Colors.white),
                   ),
                 ),
                 Constants.sizedBox(height: 6),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolius/app/view/components/general_button_widget.dart';
+import 'package:portfolius/app/view/components/widgets/general_button_widget.dart';
 
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_text_styles.dart';
-import '../../core/constants/constants.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_text_styles.dart';
+import '../../../core/constants/constants.dart';
 
 class ServicesCardWidget extends StatefulWidget {
   final String title;
