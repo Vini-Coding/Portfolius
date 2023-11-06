@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolius/app/view/home_view.dart';
+import 'package:portfolius/app/view/dashboard_view.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -9,7 +9,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        HomeView.routeName: (context) => const HomeView(),
+        DashboardView.routeName: (context) => const DashboardView(),
       },
     );
   }
