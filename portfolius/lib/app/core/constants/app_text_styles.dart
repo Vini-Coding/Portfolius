@@ -30,11 +30,12 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle normalTextStyle({Color color = Colors.white}) {
+  static TextStyle normalTextStyle({Color color = Colors.white, double fontSize = 16}) {
     return TextStyle(
       fontWeight: FontWeight.w500,
-      fontSize: 17,
+      fontSize: fontSize,
       letterSpacing: 1.5,
+      height: 1.5,
       color: color,
     );
   }

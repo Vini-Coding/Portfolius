@@ -14,14 +14,37 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth < 768) {
-          return mobile;
+          return Container(
+            height: size.height,
+            width: size.width,
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(
+              vertical: 35,
+              horizontal: size.width * 0.05,
+            ),
+            child: mobile,
+          );
         } else if (constraints.maxWidth < 1200) {
-          return tablet;
+          return Container(
+            height: size.height,
+            width: size.width,
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+            child: tablet,
+          );
         } else {
-          return desktop;
+          return Container(
+            height: size.height,
+            width: size.width,
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+            child: desktop,
+          );
         }
       },
     );

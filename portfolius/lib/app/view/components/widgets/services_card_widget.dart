@@ -5,16 +5,21 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/constants/constants.dart';
 
+// ignore: must_be_immutable
 class ServicesCardWidget extends StatefulWidget {
   final String title;
   final String asset;
   final bool isHover;
+  double width;
+  double hoverWidth;
 
-  const ServicesCardWidget({
+  ServicesCardWidget({
     super.key,
     required this.title,
     required this.asset,
     required this.isHover,
+    this.width = 350,
+    this.hoverWidth = 360,
   });
 
   @override
@@ -38,7 +43,9 @@ class _ServicesCardWidgetState extends State<ServicesCardWidget> {
       decoration: BoxDecoration(
         color: AppColors.backgroundColor2,
         borderRadius: BorderRadius.circular(30),
-        border: widget.isHover ? Border.all(color: AppColors.themeColor, width: 2) : null,
+        border: widget.isHover
+            ? Border.all(color: AppColors.themeColor, width: 2)
+            : null,
         boxShadow: const [
           BoxShadow(
             color: Colors.black54,
@@ -48,8 +55,8 @@ class _ServicesCardWidgetState extends State<ServicesCardWidget> {
           ),
         ],
       ),
-      height: widget.isHover ? 400 : 390,
-      width: widget.isHover ? 400 : 390,
+      height: widget.isHover ? widget.hoverWidth : widget.width,
+      width: widget.isHover ? 390 : 380,
       transform: widget.isHover ? onHoverActive : onHoverRemove,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -65,12 +72,13 @@ class _ServicesCardWidgetState extends State<ServicesCardWidget> {
             widget.title,
             style: AppTextStyles.montserratTextStyle(
               color: Colors.white,
+              fontSize: 22,
             ),
           ),
           Constants.sizedBox(height: 12),
           Text(
             'I design your UI always fitting in your branding and focusing in the best experience the user can get, also developing performatic apps with clean code always with the goal of the best results.',
-            style: AppTextStyles.normalTextStyle(),
+            style: AppTextStyles.normalTextStyle(fontSize: 14),
             textAlign: TextAlign.center,
           ),
           Constants.sizedBox(height: 16),

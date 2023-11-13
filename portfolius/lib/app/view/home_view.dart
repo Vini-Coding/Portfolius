@@ -25,40 +25,31 @@ class _HomeViewState extends State<HomeView> {
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: Container(
-        height: size.height,
-        width: size.width,
-        alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(
-          vertical: 30,
-          horizontal: size.width * 0.1,
+      body: ResponsiveLayoutBuilder(
+        mobile: SingleChildScrollView(
+          child: Column(
+            children: [
+              HomeColumnComponent(size: size),
+              Constants.sizedBox(height: 25),
+              const ProfileAnimationWidget(),
+            ],
+          ),
         ),
-        child: ResponsiveLayoutBuilder(
-          mobile: SingleChildScrollView(
-            child: Column(
-              children: [
-                HomeColumnComponent(size: size),
-                Constants.sizedBox(height: 25),
-                const ProfileAnimationWidget(),
-              ],
-            ),
-          ),
-          tablet: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              HomeColumnComponent(size: size),
-              const ProfileAnimationWidget(),
-            ],
-          ),
-          desktop: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              HomeColumnComponent(size: size),
-              const ProfileAnimationWidget(),
-            ],
-          ),
+        tablet: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(child: HomeColumnComponent(size: size)),
+            const ProfileAnimationWidget(),
+          ],
+        ),
+        desktop: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(child: HomeColumnComponent(size: size)),
+            const ProfileAnimationWidget(),
+          ],
         ),
       ),
     );
@@ -83,7 +74,7 @@ class _HomeColumnComponentState extends State<HomeColumnComponent> {
     AppAssets.linkedin,
   ];
 
-  var socialBI;
+  int? socialBI;
 
   @override
   Widget build(BuildContext context) {
@@ -156,8 +147,7 @@ class _HomeColumnComponentState extends State<HomeColumnComponent> {
         Constants.sizedBox(height: 15),
         FadeInDown(
           duration: const Duration(milliseconds: 1600),
-          child: SizedBox(
-            width: widget.size.width * 0.5,
+          child: Expanded(
             child: Text(
               "I design your UI always fitting in your branding and focusing in the best experience the user can get, also developing performatic apps with clean code always with the goal of the best results.",
               style: AppTextStyles.normalTextStyle(),
