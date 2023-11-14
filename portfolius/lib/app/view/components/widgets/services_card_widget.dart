@@ -55,8 +55,8 @@ class _ServicesCardWidgetState extends State<ServicesCardWidget> {
           ),
         ],
       ),
-      height: widget.isHover ? widget.hoverWidth : widget.width,
-      width: widget.isHover ? 390 : 380,
+      height: widget.isHover ?  390 : 380,
+      width: widget.isHover ? widget.hoverWidth : widget.width,
       transform: widget.isHover ? onHoverActive : onHoverRemove,
       child: Column(
         mainAxisSize: MainAxisSize.min,

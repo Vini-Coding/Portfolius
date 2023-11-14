@@ -20,49 +20,42 @@ class _ServicesSessionState extends State<ServicesSession> {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: ResponsiveLayoutBuilder(
-        mobile: const SizedBox(),
-        tablet: Column(
+        mobile: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const MyServicesText(),
             Constants.sizedBox(height: 40),
-            Row(
-              //mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {},
-                  onHover: (value) {
-                    setState(() {
-                      isApp = value;
-                    });
-                  },
-                  child: ServicesCardWidget(
-                    title: "Code",
-                    asset: AppAssets.code,
-                    isHover: isApp,
-                  ),
-                ),
-                Constants.sizedBox(width: 24),
-                InkWell(
-                  onTap: () {},
-                  onHover: (value) {
-                    setState(() {
-                      isUI = value;
-                    });
-                  },
-                  child: ServicesCardWidget(
-                    title: "UI Design",
-                    asset: AppAssets.brush,
-                    isHover: isUI,
-                  ),
-                ),
-              ],
+            InkWell(
+              onTap: () {},
+              onHover: (value) {
+                setState(() {
+                  isApp = value;
+                });
+              },
+              child: ServicesCardWidget(
+                title: "Code",
+                asset: AppAssets.code,
+                isHover: isApp,
+              ),
             ),
-            Constants.sizedBox(width: 24),
+            Constants.sizedBox(width: 18),
+            InkWell(
+              onTap: () {},
+              onHover: (value) {
+                setState(() {
+                  isUI = value;
+                });
+              },
+              child: ServicesCardWidget(
+                title: "UI Design",
+                asset: AppAssets.brush,
+                isHover: isUI,
+              ),
+            ),
+            Constants.sizedBox(width: 18),
             InkWell(
               onTap: () {},
               onHover: (value) {
@@ -74,13 +67,11 @@ class _ServicesSessionState extends State<ServicesSession> {
                 title: "Quality Assurance",
                 asset: AppAssets.analyst,
                 isHover: isQA,
-                width: size.width - 10,
-                hoverWidth: size.width,
               ),
             ),
           ],
         ),
-        desktop: Column(
+        tablet: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const MyServicesText(),
@@ -115,7 +106,62 @@ class _ServicesSessionState extends State<ServicesSession> {
                     isHover: isUI,
                   ),
                 ),
-                Constants.sizedBox(width: 24),
+              ],
+            ),
+            Constants.sizedBox(width: 26),
+            InkWell(
+              onTap: () {},
+              onHover: (value) {
+                setState(() {
+                  isQA = value;
+                });
+              },
+              child: ServicesCardWidget(
+                title: "Quality Assurance",
+                asset: AppAssets.analyst,
+                isHover: isQA,
+                width: 725,
+                hoverWidth: 735,
+              ),
+            ),
+          ],
+        ),
+        desktop: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const MyServicesText(),
+            Constants.sizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  onHover: (value) {
+                    setState(() {
+                      isApp = value;
+                    });
+                  },
+                  child: ServicesCardWidget(
+                    title: "Code",
+                    asset: AppAssets.code,
+                    isHover: isApp,
+                  ),
+                ),
+                Constants.sizedBox(width: 18),
+                InkWell(
+                  onTap: () {},
+                  onHover: (value) {
+                    setState(() {
+                      isUI = value;
+                    });
+                  },
+                  child: ServicesCardWidget(
+                    title: "UI Design",
+                    asset: AppAssets.brush,
+                    isHover: isUI,
+                  ),
+                ),
+                Constants.sizedBox(width: 18),
                 InkWell(
                   onTap: () {},
                   onHover: (value) {

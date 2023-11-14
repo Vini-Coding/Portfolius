@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolius/app/core/constants/constants.dart';
-import 'package:portfolius/app/view/components/sessions/services_session.dart';
+import 'package:portfolius/app/view/components/sessions/projects_session.dart';
 import 'package:portfolius/app/view/components/widgets/navbar_nagiation_widget.dart';
 
 import '../core/constants/app_assets.dart';
@@ -108,7 +108,7 @@ class _DashboardViewState extends State<DashboardView> {
           },
         ),
       ),
-      body: const ServicesSession(),
+      body: const ProjectsSession(),
     );
   }
 }

@@ -25,7 +25,7 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
             alignment: Alignment.center,
             padding: EdgeInsets.symmetric(
               vertical: 35,
-              horizontal: size.width * 0.05,
+              horizontal: size.width * 0.03,
             ),
             child: mobile,
           );
@@ -34,7 +34,7 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
             height: size.height,
             width: size.width,
             alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
             child: tablet,
           );
         } else {
@@ -42,7 +42,7 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
             height: size.height,
             width: size.width,
             alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.07),
             child: desktop,
           );
         }
