@@ -23,34 +23,33 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
+    return ResponsiveLayoutBuilder(
+      paddingWidth: size.width * 0.1,
       backgroundColor: AppColors.backgroundColor,
-      body: ResponsiveLayoutBuilder(
-        mobile: SingleChildScrollView(
-          child: Column(
-            children: [
-              HomeColumnComponent(size: size),
-              Constants.sizedBox(height: 25),
-              const ProfileAnimationWidget(),
-            ],
-          ),
-        ),
-        tablet: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
+      mobile: SingleChildScrollView(
+        child: Column(
           children: [
-            Expanded(child: HomeColumnComponent(size: size)),
+            HomeColumnComponent(size: size),
+            Constants.sizedBox(height: 25),
             const ProfileAnimationWidget(),
           ],
         ),
-        desktop: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(child: HomeColumnComponent(size: size)),
-            const ProfileAnimationWidget(),
-          ],
-        ),
+      ),
+      tablet: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(child: HomeColumnComponent(size: size)),
+          const ProfileAnimationWidget(),
+        ],
+      ),
+      desktop: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(child: HomeColumnComponent(size: size)),
+          const ProfileAnimationWidget(),
+        ],
       ),
     );
   }

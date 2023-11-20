@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolius/app/core/constants/constants.dart';
+import 'package:portfolius/app/view/components/sessions/about_me_session.dart';
+import 'package:portfolius/app/view/components/sessions/contact_session.dart';
+import 'package:portfolius/app/view/components/sessions/footer_session.dart';
 import 'package:portfolius/app/view/components/sessions/projects_session.dart';
+import 'package:portfolius/app/view/components/sessions/services_session.dart';
 import 'package:portfolius/app/view/components/widgets/navbar_nagiation_widget.dart';
+import 'package:portfolius/app/view/home_view.dart';
 
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
@@ -32,7 +37,15 @@ class _DashboardViewState extends State<DashboardView> {
   ];
 
   var menuIndex = 0;
-  var socialBI;
+
+  final List<Widget> screenList = [
+    const HomeView(),
+    const AboutMeSession(),
+    const ServicesSession(),
+    const ProjectsSession(),
+    const ContactSession(),
+    const FooterSession(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +121,12 @@ class _DashboardViewState extends State<DashboardView> {
           },
         ),
       ),
-      body: const ProjectsSession(),
+      body: ListView.builder(
+        itemCount: screenList.length,
+        itemBuilder: (context, index) {
+          return screenList[index];
+        },
+      ),
     );
   }
 }

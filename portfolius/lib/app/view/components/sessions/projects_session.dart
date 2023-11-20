@@ -31,48 +31,48 @@ class _ProjectsSessionState extends State<ProjectsSession> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final Size size = MediaQuery.of(context).size;
+    return ResponsiveLayoutBuilder(
       backgroundColor: AppColors.backgroundColor2,
-      body: ResponsiveLayoutBuilder(
-        mobile: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const ProjectsTitle(),
-            Constants.sizedBox(height: 25),
-            ProjectsGridView(
-              images: images,
-              hoverIndex: hoverIndex,
-              onHoverEffect: onHoverEffect,
-              crossAxisCount: 1,
-            ),
-          ],
-        ),
-        tablet: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const ProjectsTitle(),
-            Constants.sizedBox(height: 25),
-            ProjectsGridView(
-              images: images,
-              hoverIndex: hoverIndex,
-              onHoverEffect: onHoverEffect,
-              crossAxisCount: 2,
-            ),
-          ],
-        ),
-        desktop: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const ProjectsTitle(),
-            Constants.sizedBox(height: 25),
-            ProjectsGridView(
-              images: images,
-              hoverIndex: hoverIndex,
-              onHoverEffect: onHoverEffect,
-              crossAxisCount: 3,
-            ),
-          ],
-        ),
+      paddingWidth: size.width * 0.1,
+      mobile: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const ProjectsTitle(),
+          Constants.sizedBox(height: 25),
+          ProjectsGridView(
+            images: images,
+            hoverIndex: hoverIndex,
+            onHoverEffect: onHoverEffect,
+            crossAxisCount: 1,
+          ),
+        ],
+      ),
+      tablet: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const ProjectsTitle(),
+          Constants.sizedBox(height: 25),
+          ProjectsGridView(
+            images: images,
+            hoverIndex: hoverIndex,
+            onHoverEffect: onHoverEffect,
+            crossAxisCount: 2,
+          ),
+        ],
+      ),
+      desktop: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const ProjectsTitle(),
+          Constants.sizedBox(height: 25),
+          ProjectsGridView(
+            images: images,
+            hoverIndex: hoverIndex,
+            onHoverEffect: onHoverEffect,
+            crossAxisCount: 3,
+          ),
+        ],
       ),
     );
   }

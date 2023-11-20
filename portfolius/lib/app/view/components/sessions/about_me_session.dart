@@ -18,32 +18,32 @@ class AboutMeSession extends StatefulWidget {
 class _AboutMeSessionState extends State<AboutMeSession> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final Size size = MediaQuery.of(context).size;
+    return ResponsiveLayoutBuilder(
       backgroundColor: AppColors.backgroundColor2,
-      body: ResponsiveLayoutBuilder(
-        mobile: Column(
-          children: [
-            const AboutMeContent(),
-            Constants.sizedBox(width: 25),
-            const ProfilePicture(),
-          ],
-        ),
-        tablet: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const ProfilePicture(),
-            Constants.sizedBox(width: 25),
-            const AboutMeContent(),
-          ],
-        ),
-        desktop: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const ProfilePicture(),
-            Constants.sizedBox(width: 25),
-            const AboutMeContent(),
-          ],
-        ),
+      paddingWidth: size.width * 0.1,
+      mobile: Column(
+        children: [
+          const AboutMeContent(),
+          Constants.sizedBox(width: 25),
+          const ProfilePicture(),
+        ],
+      ),
+      tablet: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const ProfilePicture(),
+          Constants.sizedBox(width: 25),
+          const AboutMeContent(),
+        ],
+      ),
+      desktop: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const ProfilePicture(),
+          Constants.sizedBox(width: 25),
+          const AboutMeContent(),
+        ],
       ),
     );
   }

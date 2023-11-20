@@ -7,6 +7,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/constants/constants.dart';
 
+// ignore: must_be_immutable
 class ProjectsGridView extends StatefulWidget {
   final List<dynamic> images;
   int? hoverIndex;
@@ -55,11 +56,13 @@ class _ProjectsGridViewState extends State<ProjectsGridView> {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image(
-                    image: AssetImage(image),
-                    fit: BoxFit.fitWidth,
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.fill,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
                 Visibility(
