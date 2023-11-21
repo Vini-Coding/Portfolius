@@ -25,7 +25,7 @@ class _AboutMeSessionState extends State<AboutMeSession> {
       mobile: Column(
         children: [
           const AboutMeContent(),
-          Constants.sizedBox(width: 25),
+          Constants.sizedBox(height: 35),
           const ProfilePicture(),
         ],
       ),
@@ -34,7 +34,7 @@ class _AboutMeSessionState extends State<AboutMeSession> {
         children: [
           const ProfilePicture(),
           Constants.sizedBox(width: 25),
-          const AboutMeContent(),
+          const Expanded(child: AboutMeContent()),
         ],
       ),
       desktop: Row(
@@ -42,7 +42,7 @@ class _AboutMeSessionState extends State<AboutMeSession> {
         children: [
           const ProfilePicture(),
           Constants.sizedBox(width: 25),
-          const AboutMeContent(),
+          const Expanded(child: AboutMeContent()),
         ],
       ),
     );
@@ -54,55 +54,53 @@ class AboutMeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          FadeInRight(
-            duration: const Duration(milliseconds: 1200),
-            child: RichText(
-              text: TextSpan(
-                text: "About ",
-                style: AppTextStyles.headingTextStyle(fontSize: 30),
-                children: [
-                  TextSpan(
-                    text: "Me",
-                    style: AppTextStyles.headingTextStyle(
-                      fontSize: 30,
-                      color: AppColors.robinEdgeBlue,
-                    ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        FadeInRight(
+          duration: const Duration(milliseconds: 1200),
+          child: RichText(
+            text: TextSpan(
+              text: "About ",
+              style: AppTextStyles.headingTextStyle(fontSize: 30),
+              children: [
+                TextSpan(
+                  text: "Me",
+                  style: AppTextStyles.headingTextStyle(
+                    fontSize: 30,
+                    color: AppColors.robinEdgeBlue,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-          Constants.sizedBox(height: 6),
-          FadeInLeft(
-            duration: const Duration(milliseconds: 1600),
-            child: Text(
-              "Flutter developer",
-              style: AppTextStyles.montserratTextStyle(color: Colors.white),
-            ),
+        ),
+        Constants.sizedBox(height: 6),
+        FadeInLeft(
+          duration: const Duration(milliseconds: 1600),
+          child: Text(
+            "Flutter developer",
+            style: AppTextStyles.montserratTextStyle(color: Colors.white),
           ),
-          Constants.sizedBox(height: 6),
-          FadeInLeft(
-            duration: const Duration(milliseconds: 1600),
-            child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-              style: AppTextStyles.normalTextStyle(),
-            ),
+        ),
+        Constants.sizedBox(height: 6),
+        FadeInLeft(
+          duration: const Duration(milliseconds: 1600),
+          child: Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            style: AppTextStyles.normalTextStyle(),
           ),
-          Constants.sizedBox(height: 15),
-          FadeInUp(
-            duration: const Duration(milliseconds: 1800),
-            child: GeneralButton(
-              text: "Read more",
-              onTap: () {},
-            ),
+        ),
+        Constants.sizedBox(height: 15),
+        FadeInUp(
+          duration: const Duration(milliseconds: 1800),
+          child: GeneralButton(
+            text: "Read more",
+            onTap: () {},
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

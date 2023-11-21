@@ -7,6 +7,7 @@ import 'package:portfolius/app/view/components/sessions/projects_session.dart';
 import 'package:portfolius/app/view/components/sessions/services_session.dart';
 import 'package:portfolius/app/view/components/widgets/navbar_nagiation_widget.dart';
 import 'package:portfolius/app/view/home_view.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../core/constants/app_assets.dart';
 import '../core/constants/app_colors.dart';
@@ -21,6 +22,7 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
+  final ItemScrollController itemScrollController = ItemScrollController();
   final onMenuHover = Matrix4.identity()..scale(1);
   final menuItems = <String>[
     "Home",
@@ -121,7 +123,7 @@ class _DashboardViewState extends State<DashboardView> {
           },
         ),
       ),
-      body: ListView.builder(
+      body: ScrollablePositionedList.builder(
         itemCount: screenList.length,
         itemBuilder: (context, index) {
           return screenList[index];

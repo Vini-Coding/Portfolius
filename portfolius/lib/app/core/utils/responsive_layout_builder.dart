@@ -24,32 +24,38 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth < 768) {
           return Container(
-            height: size.height,
+            //height: size.height,
             width: size.width,
             alignment: Alignment.center,
             color: backgroundColor,
             padding: EdgeInsets.symmetric(
-              vertical: 35,
+              vertical: size.height * 0.2,
               horizontal: paddingWidth,
             ),
             child: mobile,
           );
         } else if (constraints.maxWidth < 1200) {
           return Container(
-            height: size.height,
+            //height: size.height,
             width: size.width,
             alignment: Alignment.center,
             color: backgroundColor,
-            padding: EdgeInsets.symmetric(horizontal: paddingWidth),
+            padding: EdgeInsets.symmetric(
+              vertical: size.height * 0.2,
+              horizontal: paddingWidth,
+            ),
             child: tablet,
           );
         } else {
           return Container(
-            height: size.height,
+            //height: size.height,
             width: size.width,
             alignment: Alignment.center,
             color: backgroundColor,
-            padding: EdgeInsets.symmetric(horizontal: paddingWidth),
+            padding: EdgeInsets.symmetric(
+              vertical: size.height * 0.2,
+              horizontal: paddingWidth,
+            ),
             child: desktop,
           );
         }

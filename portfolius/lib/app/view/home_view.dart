@@ -3,7 +3,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolius/app/view/components/widgets/profile_animation_widget.dart';
 import '../core/constants/app_assets.dart';
-import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
 import '../core/constants/constants.dart';
 import '../core/utils/responsive_layout_builder.dart';
@@ -25,7 +24,7 @@ class _HomeViewState extends State<HomeView> {
 
     return ResponsiveLayoutBuilder(
       paddingWidth: size.width * 0.1,
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: Colors.transparent,
       mobile: SingleChildScrollView(
         child: Column(
           children: [

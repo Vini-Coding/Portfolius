@@ -42,7 +42,7 @@ class _ServicesSessionState extends State<ServicesSession> {
               isHover: isApp,
             ),
           ),
-          Constants.sizedBox(width: 18),
+          Constants.sizedBox(height: 18),
           InkWell(
             onTap: () {},
             onHover: (value) {
@@ -56,7 +56,7 @@ class _ServicesSessionState extends State<ServicesSession> {
               isHover: isUI,
             ),
           ),
-          Constants.sizedBox(width: 18),
+          Constants.sizedBox(height: 18),
           InkWell(
             onTap: () {},
             onHover: (value) {
